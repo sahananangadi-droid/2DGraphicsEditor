@@ -1,3 +1,12 @@
+/*
+ * 2D Graphics Editor
+ * Author: Sahana
+ * Description: A menu-driven 2D graphics editor in C
+ *              Uses a 2D character array with * and _
+ *              Supports: Rectangle, Line, Circle, Triangle
+ *              Features: Add, Delete, Clear, Display objects
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
