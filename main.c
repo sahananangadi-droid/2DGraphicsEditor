@@ -1,3 +1,4 @@
+// Day 3 - June 8, 2026 - Tested all shapes: circle, rectangle, line, triangle
 /*
  * 2D Graphics Editor
  * Author: Sahana
