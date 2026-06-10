@@ -1,16 +1,161 @@
-Prompts used for 2D Graphics Editor project.Done using claude:
+====================================================
+2D Graphics Editor - AI Interaction Log
+Tool Used: Claude (Anthropic)
+====================================================
 
-1. gcc main.c -o editor -lm - getting error gcc not recognized
-2. guide me step by step to install gcc on Windows
-3. rewrite the whole code for 2D graphics editor in C
-4. the display is not showing after drawing shapes, fix it
-5. circle is going out of bounds, fix the error
-6. rewrite replacing the getchar fix and give whole code
-7. the canvas is still repeating and not showing display
-8. i need all points from problem statement to be fulfilled
-9. how to push code to GitHub step by step
-10. how to do daily commits to GitHub
-11. add comments to the code for documentation
-12. remove editor.exe from GitHub repository
-13. what will teacher check from GitHub for marks
-14. Day 3 - add gitignore and daily progress update
+PROMPT 1:
+gcc main.c -o editor -lm getting error gcc not recognized
+
+RESPONSE 1:
+Windows doesn't have gcc installed. Options: Install MinGW-w64,
+use MSYS2, use WSL, or use Visual Studio. Recommended: MinGW-w64
+from winlibs.com. Download zip, extract to C:\mingw64, add
+C:\mingw64\bin to system PATH, restart PowerShell, test with gcc --version.
+
+----------------------------------------------------
+
+PROMPT 2:
+guide me step by step to install gcc on Windows
+
+RESPONSE 2:
+Step 1: Download from winlibs.com
+Step 2: Extract zip to C:\
+Step 3: Add C:\mingw64\bin to system PATH via Environment Variables
+Step 4: Restart PowerShell and run gcc --version
+Step 5: Compile with gcc main.c -o editor -lm
+
+----------------------------------------------------
+
+PROMPT 3:
+rewrite the whole code for 2D graphics editor in C
+
+RESPONSE 3:
+Provided complete rewritten code with:
+- initCanvas(), displayCanvas(), drawLine(), drawRectangle(),
+  drawCircle(), drawTriangle() functions
+- 2D char array canvas[25][60]
+- Object store with add/delete functionality
+- Bounds checking for all shapes
+- Auto display after every draw
+
+----------------------------------------------------
+
+PROMPT 4:
+the display is not showing after drawing shapes fix it
+
+RESPONSE 4:
+Problem: getchar() was consuming scanf newline instead of waiting.
+Fix: Added fflush(stdout) and proper input buffer clearing loop:
+while ((c = getchar()) != '\n' && c != EOF);
+followed by getchar() to wait for Enter key.
+
+----------------------------------------------------
+
+PROMPT 5:
+circle is going out of bounds fix the error
+
+RESPONSE 5:
+Added bounds checking in drawCircle():
+if (!inBounds(xc-r, yc-r) || !inBounds(xc+r, yc+r))
+Print error message and return without drawing.
+Safe circle input: center must be at least radius away from all edges.
+
+----------------------------------------------------
+
+PROMPT 6:
+the canvas is still repeating and not showing display
+
+RESPONSE 6:
+Root cause: PowerShell window too small, canvas scrolls off screen.
+Fix: Right-click PowerShell title bar -> Properties -> Layout ->
+Set Screen Buffer Height to 3000, Window Height to 50.
+Also removed getchar() pause, replaced with simple message print.
+
+----------------------------------------------------
+
+PROMPT 7:
+i need all points from problem statement to be fulfilled
+
+RESPONSE 7:
+Confirmed all requirements met:
+- Menu driven program: yes
+- Uses * and _: yes
+- Draw circle, rectangle, line, triangle: yes
+- Add objects: yes
+- Delete objects: yes
+- 2D array of characters: canvas[ROWS][COLS]
+- Display function: displayCanvas()
+
+----------------------------------------------------
+
+PROMPT 8:
+how to push code to GitHub step by step
+
+RESPONSE 8:
+Step 1: Create GitHub account
+Step 2: Install Git from git-scm.com
+Step 3: git config --global user.name and user.email
+Step 4: Create new repo on GitHub (Public, no README)
+Step 5: git init, git add ., git commit, git branch -M main,
+        git remote add origin <url>, git push -u origin main
+Step 6: Use Personal Access Token as password
+
+----------------------------------------------------
+
+PROMPT 9:
+how to do daily commits to GitHub
+
+RESPONSE 9:
+Daily routine:
+cd to project folder
+git add .
+git commit -m "Day X - description"
+git push
+Must push every day as daily push is mandatory per assignment.
+
+----------------------------------------------------
+
+PROMPT 10:
+what will teacher check from GitHub for marks
+
+RESPONSE 10:
+Teacher checks:
+1. main.c - all shapes implemented, clean code, comments
+2. Commit history - daily pushes, meaningful commit messages
+3. README.md - project description
+Rubric: Original Complete = 5 marks, Original almost complete = 4,
+Partially complete = 3, Copied = 2, No submission = 1, Copied caught = 0
+
+----------------------------------------------------
+
+PROMPT 11:
+add comments to the code for documentation
+
+RESPONSE 11:
+Added header comment block at top of main.c:
+/* 2D Graphics Editor, Author: Sahana, Date: June 2026,
+Description: Menu-driven editor using 2D char array */
+Also added section divider comments throughout code.
+
+----------------------------------------------------
+
+PROMPT 12:
+remove editor.exe from GitHub repository
+
+RESPONSE 12:
+Run: git rm editor.exe
+Then: git commit -m "remove compiled binary"
+Then: git push
+Also create .gitignore with *.exe to prevent future exe uploads.
+
+----------------------------------------------------
+
+PROMPT 13:
+For Mini Project students must copy all prompts and responses
+into prompt.txt and upload to same Git repository
+
+RESPONSE 13:
+Created prompt.txt with all prompts and their corresponding
+responses in structured format and pushed to GitHub repository.
+
+====================================================
