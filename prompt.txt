@@ -1,0 +1,16 @@
+Prompts used for 2D Graphics Editor project.Done using claude:
+
+1. gcc main.c -o editor -lm - getting error gcc not recognized
+2. guide me step by step to install gcc on Windows
+3. rewrite the whole code for 2D graphics editor in C
+4. the display is not showing after drawing shapes, fix it
+5. circle is going out of bounds, fix the error
+6. rewrite replacing the getchar fix and give whole code
+7. the canvas is still repeating and not showing display
+8. i need all points from problem statement to be fulfilled
+9. how to push code to GitHub step by step
+10. how to do daily commits to GitHub
+11. add comments to the code for documentation
+12. remove editor.exe from GitHub repository
+13. what will teacher check from GitHub for marks
+14. Day 3 - add gitignore and daily progress update
